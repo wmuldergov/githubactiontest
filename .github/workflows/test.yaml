@@ -1,0 +1,10 @@
+name: Call Reusable Playwright Workflow
+
+on:
+  workflow_dispatch: # Trigger manually or use other triggers (e.g., push, pull_request)
+
+jobs:
+  call_another_repo_workflow:
+    uses: bcgov/DriveBC.ca-automated-tests/.github/workflows/playwright.yml@main
+    with:
+      environment: 'test'
