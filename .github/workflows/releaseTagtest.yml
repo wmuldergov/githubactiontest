@@ -1,0 +1,14 @@
+name: Test getting release info
+
+on:
+  workflow_dispatch: 
+  release:
+    types: [published]
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get release output
+        run: |
+          echo ${{ github.event.release.tag_name }}
